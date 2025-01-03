@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href='{{ url_for("static", filename="css/manage.css") }}'>
+    <title>Manage Products</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/"><button>Home</button></a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="manage-container">
+            <h1>Manage Products</h1>
+
+            <section class="form-section">
+                <h2>Add Product</h2>
+                <form action="/addpr" method="post">
+                    <input type="text" name="product_name" placeholder="Enter product name" required>
+                    <input type="text" name="product_price" placeholder="Enter product price" required>
+                    <input type="text" name="product_category" placeholder="Enter product category" required>
+                    <input type="text" name="product_description" placeholder="Enter product description" required>
+                    <input type="text" name="product_img" placeholder="Enter img" required>
+                    <button type="submit">Add</button>
+                </form>
+            </section>
+
+            <section class="form-section">
+                <h2>Delete Product</h2>
+                <form action="/delete" method="post">
+                    <input type="text" name="product_name" placeholder="Enter product name to delete" required>
+                    <button type="submit">Delete</button>
+                </form>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

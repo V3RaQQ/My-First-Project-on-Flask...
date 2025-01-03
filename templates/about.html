@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href='{{ url_for("static", filename="css/about.css") }}'>
+    <title>About Us</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/"><button>Home</button></a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="about-details">
+            <h1>About Our Hot Dogs</h1>
+            <p>Our hot hot dogs are incredible hot. We take pride in our delicious recipes and the finest ingredients. Our hot dogs are not only tasty but also made with care and passion.</p>
+            <img src='{{ url_for("static", filename="images/about.jpg") }}' alt="Hot Dogs">
+        </div>
+    </main>
+</body>
+</html>

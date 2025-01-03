@@ -1,0 +1,37 @@
+<!-- <link rel="stylesheet" href='{{ url_for("static", filename="css/about.css") }}'>
+
+
+<b>You are not autorizate! </b>
+
+<a href="/sign_up">
+    <button>Autorizate</button>
+</a>
+
+<a href="/">
+    <button>home</button>
+</a> -->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href='{{ url_for("static", filename="css/about.css") }}'>
+    <title>Error</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/"><button>Home</button></a>
+            <a href="/sign_up"><button>Log In</button></a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="about-details">
+            <h1>Error</h1>
+            <p>You are not autorizate. . .</p>
+            
+        </div>
+    </main>
+</body>
+</html>

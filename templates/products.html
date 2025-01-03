@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href='{{ url_for("static", filename="css/products.css") }}'>
+    <title>Products</title>
+</head>
+<body>
+    <header>
+        <h1>Our Hot Dogs</h1>
+        <nav>
+            <a href="/products/spicy"><button>Spicy</button></a>
+            <a href="/products/hot"><button>Hot</button></a>
+            <a href="/products/small"><button>Small</button></a>
+            <a href="/products/vegan"><button>Vegan</button></a>
+            <a href="/products/"><button>All</button></a>
+            <a href="/cart"><button>Cart</button></a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            {% for hot_dog in items %}
+                <div class="product-card">
+                    <img src='{{ url_for("static", filename="images/" + hot_dog.img) }}' alt="{{ hot_dog.name }}">
+                    <div class="product-info">
+                        <h2>{{ hot_dog.name }}</h2>
+                        <p>Price: {{ hot_dog.price }}</p>
+                        <p>Category: {{ hot_dog.category }}</p>
+                        <div class="button-group">
+                            <a href="/search/{{ hot_dog.name }}"><button>Описание</button></a>
+                            {% if client_logged_in %}
+                            <form action="/add_to_cart" method="post">
+                                <input type="hidden" name="product_name" value="{{ hot_dog.name }}">
+                                <input type="hidden" name="client_login" value="{{ client_login }}">
+                                <button class="add-to-cart">Добавить в корзину</button>
+                            </form>
+                            {% else %}
+                            <p>Пожалуйста, <a href="{{ url_for('log_in') }}">войдите в систему</a>, чтобы добавить товар в корзину.</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </main>
+    
+
+    <footer>
+        <a href="/"><button>Home</button></a>
+    </footer>
+</body>
+</html>

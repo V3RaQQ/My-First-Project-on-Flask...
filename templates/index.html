@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href='{{ url_for("static", filename="css/index.css") }}'>
+    <title>Hot Dogs</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Hot Dogs! {{status}} </h1>
+        <nav>
+            <a href="/products"><button>Products</button></a>
+            <a href="/about"><button>About</button></a>
+            <a href="/manage"><button>Manage Products</button></a>
+            <a href="/sign_up"><button>Sign up</button></a>
+            <a href="/log_in"><button>Log In</button></a>
+            <a href="/log_out"><button>Log Out</button></a>
+
+        </nav>
+    </header>
+
+    <main>
+        <section class="product-display">
+            <img src='{{ url_for("static", filename="images/img1.jpg") }}' alt="Hot Dog">
+            <h2>Delicious Hot Dog</h2>
+            <p>Try our delicious hot dog with all the best toppings.</p>
+        </section>
+    </main>
+</body>
+</html>

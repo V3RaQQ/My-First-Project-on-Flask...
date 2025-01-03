@@ -1,0 +1,16 @@
+{% for hot_dog in items %}
+    {% if frmo < hot_dog.price < to%} 
+        {{hot_dog}}
+        <br/>
+    {% endif %}
+
+{% endfor %}
+
+
+<a href="/products">
+    <button>Products</button>
+</a>
+
+<a href="/">
+    <button>home</button>
+</a>

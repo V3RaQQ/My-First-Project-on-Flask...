@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <link rel="stylesheet" href='{{ url_for("static", filename="css/sign_up.css") }}'>
+</head>
+<body>
+
+<header>
+    <h1>Welcome to Our Site</h1>
+    <a href="/">
+    <button>
+        Home
+    </button></a>
+</header>
+
+<main>
+    <div class="manage-container">
+        <h1>Log In</h1>
+
+        <section class="form-section">
+            <form action="/log_in_verification" method="post">
+                <input type="text" name="login" placeholder="Enter login" required>
+                <input type="password" name="password" placeholder="Enter password" required>
+                <button type="submit">Log In</button>
+            </form>
+        </section>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2024 Your Website. All rights reserved Chat GPT</p>
+</footer>
+
+</body>
+</html>
